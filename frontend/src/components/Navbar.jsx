@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white text-blue-800 p-4 shadow-lg flex justify-between shadow py-4">
-      <Link to='/' className="text-xl ml-10 font-bold">Store<span className='text-blue-600'>Rater</span> </Link>
+      <Link to='/' className="text-2xl ml-10 font-bold">Store<span className='text-blue-600'>Rater</span> </Link>
       <div className="relative flex items-center gap-4">
         {!user ? (
           <>
@@ -28,7 +28,7 @@ const Navbar = () => {
             {user.role === 'admin' && <Link to="/admin" className="hover:text-blue-800">Admin Dashboard</Link>}
 
             <div className="relative">
-              <button onClick={() => setShowDropdown(!showDropdown)} className="ml-4 font-semibold hover:text-blue-800">
+              <button onClick={() => setShowDropdown(!showDropdown)} className="ml-4 font-semibold border border-1 border-blue-600 bg-blue-50 py-2 px-4 rounded-lg hover:text-blue-800">
                 {user.username}
               </button>
               {showDropdown && (

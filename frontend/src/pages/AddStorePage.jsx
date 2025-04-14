@@ -15,12 +15,12 @@ export default function AddStorePage() {
     e.preventDefault();
     try {
       await axios.post(
-        'http://localhost:5000/api/stores', // POST request to the backend to add store
+        'http://localhost:5000/api/stores', 
         { name, email, password, address },
         { headers: { Authorization: `Bearer ${getToken()}` } }
       );
       alert('Store added successfully!');
-      navigate('/admin'); // Redirect to admin page after successful store addition
+      navigate('/admin');
     } catch (error) {
       alert('Error adding store: ' + (error.response?.data || error.message));
     }

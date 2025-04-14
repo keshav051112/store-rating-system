@@ -28,12 +28,11 @@ export default function AdminLayout({ children }) {
           </li>
           <li className="flex items-center">
             <FaSignOutAlt className="mr-2" />
-            <Link to="/admin/logout" className="hover:text-blue-400  bg-red-100 border border-1 py-2 px-4 rounded-lg border-red-600 text-red-600">Logout</Link>
+            <Link to="/login" className="hover:text-blue-400  bg-red-100 border border-1 py-2 px-4 rounded-lg border-red-600 text-red-600">Logout</Link>
           </li>
         </ul>
       </div>
 
-      {/* Main Content */}
       <div className="flex-1 p-6">{children}</div>
     </div>
   );

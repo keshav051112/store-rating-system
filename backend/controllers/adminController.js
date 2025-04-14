@@ -4,7 +4,6 @@ const storeModel = require('../models/storeModel');
 
 exports.getKPI = async (req, res) => {
   try {
-
     const data = await ratingModel.getKPI(); 
     res.json(data); 
   } catch (error) {
@@ -23,4 +22,12 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
-
+exports.getAllStores = async (req, res) => {
+  try {
+    const stores = await storeModel.getStores(); 
+    res.json(stores); 
+  } catch (error) {
+    console.error('Error fetching stores:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
