@@ -70,7 +70,7 @@ export default function UserDashboard() {
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 mb-8">Store Ratings</h1>
         
-        {/* Search Bar */}
+      
         <div className="relative mb-8">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
@@ -90,7 +90,7 @@ export default function UserDashboard() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Store List */}
+       
             <div className="md:col-span-2 space-y-4">
               {filteredStores.length === 0 ? (
                 <div className="bg-white p-6 rounded-lg shadow-sm text-center">
@@ -133,7 +133,7 @@ export default function UserDashboard() {
               )}
             </div>
             
-            {/* Store Details and Rating */}
+          
             <div className="bg-white p-6 rounded-lg shadow-sm sticky top-6 h-fit">
               {selectedStore ? (
                 <>

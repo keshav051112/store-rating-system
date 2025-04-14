@@ -6,7 +6,6 @@ const userModel = require('../models/userModel');
 exports.register = async (req, res) => {
   const { username, email, password, role, address } = req.body;
 
-  // Check if username or email already exists
   const existingUser = await userModel.getUserByUsernameOrEmail(username, email);
   if (existingUser.rows.length > 0) {
     return res.status(400).json({ error: 'Username or email already in use' });
@@ -28,7 +27,7 @@ exports.login = async (req, res) => {
 
   const { id, role, address, username } = user.rows[0];
 
-  // Include address or username in token if needed
+
   const token = jwt.sign({ id, role, address, username }, 'secret');
 
   res.json({

@@ -32,4 +32,3 @@ exports.getRatingCount = (storeId) => {
     [storeId]
   );
 };
-

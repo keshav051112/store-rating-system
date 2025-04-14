@@ -1,23 +1,23 @@
-// In your adminController.js
+
 const userModel = require('../models/userModel');
 const ratingModel = require('../models/ratingModel');
 
-// Get KPI data
+
 exports.getKPI = async (req, res) => {
   try {
-    const data = await ratingModel.getKPI(); // Call the newly added getKPI function
-    res.json(data); // Send the KPI data as the response
+    const data = await ratingModel.getKPI(); 
+    res.json(data); 
   } catch (error) {
     console.error('Error fetching KPI:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
 };
 
-// Get all users
+
 exports.getAllUsers = async (req, res) => {
   try {
-    const users = await userModel.getAllUsers(); // Fetch users from userModel
-    res.json(users.rows); // Assuming you want to return the rows
+    const users = await userModel.getAllUsers(); 
+    res.json(users.rows); 
   } catch (error) {
     console.error('Error fetching users:', error);
     res.status(500).json({ message: 'Internal server error' });

@@ -36,10 +36,10 @@ export default function OwnerDashboard() {
           </div>
         </div>
 
-        {/* Section Title */}
+       
         <h2 className="text-2xl font-semibold text-gray-800 mt-8">Store Stats</h2>
 
-        {/* Stats Card Section */}
+      
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-lg font-semibold text-gray-700">Orders Received</h3>

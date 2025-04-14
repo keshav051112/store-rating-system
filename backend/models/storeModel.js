@@ -1,6 +1,6 @@
 const db = require('./db');
 
-// Get all stores with average rating
+
 exports.getStores = async () => {
   const stores = await db.query('SELECT * FROM stores');
   for (const store of stores.rows) {
@@ -8,18 +8,18 @@ exports.getStores = async () => {
       'SELECT AVG(rating) FROM ratings WHERE store_id = $1',
       [store.id]
     );
-    store.averageRating = averageRatingResult.rows[0].avg || 0; // Ensure fallback to 0 if no ratings
+    store.averageRating = averageRatingResult.rows[0].avg || 0; 
   }
   return stores.rows;
 };
 
-// Get average rating for a store
+
 exports.getStoreAverageRating = (storeId) => {
   return db.query('SELECT AVG(rating) FROM ratings WHERE store_id = $1', [storeId])
-    .then(result => result.rows[0].avg || 0); // Return 0 if no ratings are present
+    .then(result => result.rows[0].avg || 0); 
 };
 
-// Add a new store
+
 exports.addStore = (name, email, address, ownerId) => {
   return db.query(
     'SELECT * FROM stores WHERE owner_id = $1 AND name = $2', 

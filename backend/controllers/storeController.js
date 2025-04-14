@@ -5,7 +5,6 @@ exports.getStores = async (req, res) => {
   try {
     const stores = await storeModel.getStores();
     
-    // Get user ratings if user is logged in
     if (req.user) {
       for (const store of stores) {
         const userRating = await ratingModel.getUserRatingForStore(req.user.id, store.id);
@@ -34,17 +33,16 @@ exports.rateStore = async (req, res) => {
       ratingCount: parseInt(ratingCountResult.rows[0].count) || 0
     });
   } catch (error) {
-    console.error('Error rating store:', error.message); // <-- shows the DB error
+    console.error('Error rating store:', error.message); 
     res.status(500).json({ message: 'Error rating store', error: error.message });
   }
 };
 
 
 
-// Add a new store (for store owners)
 exports.addStore = async (req, res) => {
   const { name, email, address } = req.body;
-  const ownerId = req.user.id; // The authenticated user is the store owner
+  const ownerId = req.user.id; 
 
   try {
     await storeModel.addStore(name, email, address, ownerId);

@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
-        {/* Text Section */}
+   
         <div className="max-w-xl">
           <h1 className="text-5xl font-extrabold text-blue-700 leading-tight mb-6">
             Welcome to Store Rating System
@@ -21,7 +21,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Illustration Section */}
+     
         <div className="w-full md:w-1/2">
           <img
             src={store_rating}

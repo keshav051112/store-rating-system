@@ -20,7 +20,7 @@ export default function AddUserPage() {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       alert('User added successfully!');
-      navigate('/admin'); // Redirect back to the Admin Dashboard
+      navigate('/admin'); 
     } catch (error) {
       alert('Error adding user: ' + (error.response?.data || error.message));
     }
