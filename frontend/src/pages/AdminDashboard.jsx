@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { getToken } from '../utils/auth';
 import { Link } from 'react-router-dom';
-import { FaHome, FaUser, FaStore, FaCog, FaSignOutAlt } from 'react-icons/fa'; // Import React Icons
+import { FaHome, FaUser, FaStore, FaCog, FaSignOutAlt } from 'react-icons/fa'; 
 
 export default function AdminDashboard() {
   const [users, setUsers] = useState([]);
@@ -73,7 +73,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="flex">
-      {/* Sidebar */}
+      
       <div className="w-1/4 h-screen bg-gray-50 border border-1 rounded-r-lg border-gray-600 text-gray-600 p-4">
         <div className="text-xl font-bold mb-6 flex items-center">
           <FaHome className="mr-2" /> Admin Dashboard
@@ -97,18 +97,17 @@ export default function AdminDashboard() {
           </li>
           <li className="flex items-center">
            
-            <Link to={'/admin/logout'} className="hover:text-blue-400 flex  bg-red-100 border border-1 py-2 px-4 rounded-lg border-red-600 text-red-600">{ <FaSignOutAlt className="mr-2" />}Logout</Link>
+            <Link to={'/login'} className="hover:text-blue-400 flex  bg-red-100 border border-1 py-2 px-4 rounded-lg border-red-600 text-red-600">{ <FaSignOutAlt className="mr-2" />}Logout</Link>
           </li>
         </ul>
       </div>
 
-      {/* Main Content */}
       <div className="flex-1 p-6">
         <h1 className="text-3xl font-bold text-gray-800">Admin Dashboard</h1>
 
         <AdminKPI totalUsers={users.length} totalStores={stores.length} totalRatings={ratings.length} />
 
-        {/* Toggle Tabs */}
+       
         <div className="mt-6 flex space-x-4">
           <button
             className={`px-6 py-2 rounded-lg ${isUsersTab ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'}`}
@@ -124,7 +123,6 @@ export default function AdminDashboard() {
           </button>
         </div>
 
-        {/* Search Filters */}
         <div className="mt-6 flex space-x-4">
           <input
             type="text"
@@ -165,7 +163,6 @@ export default function AdminDashboard() {
           )}
         </div>
 
-        {/* Conditional Rendering for Users or Stores */}
         {isUsersTab ? (
           <div className="mt-6">
             <h2 className="text-xl font-semibold text-gray-800">All Users</h2>

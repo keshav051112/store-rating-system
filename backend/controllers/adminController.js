@@ -1,10 +1,10 @@
-
 const userModel = require('../models/userModel');
 const ratingModel = require('../models/ratingModel');
-
+const storeModel = require('../models/storeModel');
 
 exports.getKPI = async (req, res) => {
   try {
+
     const data = await ratingModel.getKPI(); 
     res.json(data); 
   } catch (error) {
@@ -12,7 +12,6 @@ exports.getKPI = async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 };
-
 
 exports.getAllUsers = async (req, res) => {
   try {
@@ -23,3 +22,5 @@ exports.getAllUsers = async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 };
+
+

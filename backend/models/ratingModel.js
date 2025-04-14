@@ -32,3 +32,15 @@ exports.getRatingCount = (storeId) => {
     [storeId]
   );
 };
+
+exports.getKPI = async () => {
+  const users = await db.query('SELECT COUNT(*) FROM users');
+  const stores = await db.query('SELECT COUNT(*) FROM stores');
+  const ratings = await db.query('SELECT COUNT(*) FROM ratings');
+  
+  return {
+    users: users.rows[0].count,
+    stores: stores.rows[0].count,
+    ratings: ratings.rows[0].count
+  };
+};
