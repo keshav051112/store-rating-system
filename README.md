@@ -43,7 +43,7 @@ A full-stack web application that allows users to rate and review stores, with r
 ```bash
 cd backend
 npm install
-npm run dev
+npm start
 
 
 PORT=5000
